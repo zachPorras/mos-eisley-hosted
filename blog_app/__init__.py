@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_login import login_manager
 from config import Config
 from .authentication.routes import auth
@@ -11,7 +11,7 @@ from .helpers import JSONEncoder
 from flask_jwt_extended import JWTManager
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../client/build',static_url_path='')
 
 app.config.from_object(Config)
 
@@ -32,3 +32,12 @@ CORS(app)
 
 # overwrites exising JSONEncoder with additional decimal function from helpers
 app.json_encoder = JSONEncoder
+
+
+@app.route('/')
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')
