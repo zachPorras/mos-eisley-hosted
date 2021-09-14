@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1>Profile Page for {{ current_user.email }}</h1>
+        <h3>Here are your credentials:</h3>
+        <ul class="list-group">
+            <li class="list-group-item">Email: {{ current_user.email }}</li>
+            <li class="list-group-item">Token: {{ current_user.token }}</li>
+        </ul>
+    </div>
+{% endblock content %}
