@@ -3,7 +3,7 @@ from flask import Blueprint, render_template, request, redirect, url_for
 from blog_app.forms import UserSignupForm, UserLoginForm
 from blog_app.models import db, User, check_password_hash
 from flask_login import login_user, logout_user, login_required
-from flask_jwt_extended import create_access_token
+# from flask_jwt_extended import create_access_token
 
 auth = Blueprint('auth', __name__, template_folder='auth_templates')
 
