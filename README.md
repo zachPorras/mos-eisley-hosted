@@ -1,4 +1,4 @@
-*This is the Heroku-hosted repository for this project.  The development repository for this project is located at https://github.com/zachPorras/mos_eisley_archives.*
+*This is the Heroku-hosted repository for this project.  The development repository for this project is located at https://github.com/zachPorras/mos_eisley_archives and includes a pre-build React front-end directory.*
 
 *Use the following login to view data already loaded into the database: maul@sith.org / password: horns*
 
